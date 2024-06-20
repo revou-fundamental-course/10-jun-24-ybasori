@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/script.js"></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main class="main">
+      <section>
+        <p>
+          Masukan suhu derajat Celcius (<sup>o</sup>C) ke kotak dibawah, lalu
+          klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk
+          Fahrenheit (<sup>o</sup>F)
+        </p>
+      </section>
+      <section class="conversion-cf">
+        <section class="box">
+          <label>Celcius (<sup>o</sup>C):</label>
+          <input type="text" id="celcius-input" value="90" name="celcius" onkeyup="validate(this)" />
+        </section>
+        <section class="conversion-btns">
+          <button onclick="toCelcius()">Konversi</button>
+          <button onclick="toReset()">Reset</button>
+          <button onclick="toFahrenheit()">Reverse</button>
+        </section>
+        <section class="box">
+          <label>Fahrenheit (<sup>o</sup>F):</label>
+          <input type="text" id="fahrenheit-input" value="194" name="fahrenheit" onkeyup="validate(this)" />
+        </section>
+      </section>
+      <section>
+        <p>Cara kalkulasi</p>
+        <p id="cara-kalkulasi">90<sup>o</sup>C * (9/5) + 32 = 194<sup>o</sup>F</p>
+        <a onclick="ubahKalkulasi()" id="kalkulasi-btn" data-kalkulasi="F" href="javascript:void(0)">Fahrenheit ke Celcius</a>
+      </section>
+      <section>
+        <h3>
+          Cara konversi dari <span id="title-change">Celcius (<sup>o</sup>C) ke Fahrenheit
+          (<sup>o</sup>F)</span>
+        </h3>
+        <hr />
+        <p id="formula-text">
+          Suhu <span class="big-s">S</span> dalam derajat Fahrenheit
+          (<sup>o</sup>F) sama dengan suhu <span class="big-s">S</span> dalam
+          derajat Celcius (<sup>o</sup>C) kali 9/5 tambah 32.
+        </p>
+        <p id="formula-1">
+          <span class="normal-s">S</span><sub>(<sup>o</sup>F)</sub> = (<span
+            class="normal-s"
+            >S</span
+          ><sub>(<sup>o</sup>F)</sub> x 9/5) + 32
+        </p>
+        <p>atau</p>
+        <p id="formula-2">
+          <span class="normal-s">S</span><sub>(<sup>o</sup>F)</sub> = (<span
+            class="normal-s"
+            >S</span
+          ><sub>(<sup>o</sup>F)</sub> x 1.8) + 32
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
