@@ -1,4 +1,6 @@
+// fungsi fahrenheit ke celcius
 function toCelcius() {
+    // validasi
   validateNumber(document.getElementById("celcius-input"));
   var celciusInput = document.getElementById("celcius-input").value;
   var result = parseInt(celciusInput) * 1.8 + 32;
@@ -23,6 +25,7 @@ function toCelcius() {
   }
 }
 
+// fungsi celcius ke fahrenheit
 function toFahrenheit() {
   validateNumber(document.getElementById("fahrenheit-input"));
   var fahrenheitInput = document.getElementById("fahrenheit-input").value;
@@ -48,12 +51,12 @@ function toFahrenheit() {
     ubahFormula();
   }
 }
-
+// fungsi reset
 function toReset() {
   document.getElementById("celcius-input").value = "";
   document.getElementById("fahrenheit-input").value = "";
 }
-
+// fungsi pengubah formula
 function ubahFormula() {
   var celciusValue = document.getElementById("celcius-input").value;
   var celciusInput = !isNaN(celciusValue) ? celciusValue : "";
@@ -142,6 +145,7 @@ function ubahKalkulasi() {
   ubahFormula();
 }
 
+// fungsi validasi
 function validateNumber(element) {
   [...element.parentElement.getElementsByClassName("error")].forEach(function (
     el
