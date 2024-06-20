@@ -4,6 +4,13 @@ function toCelcius() {
   var result = parseInt(celciusInput) * 1.8 + 32;
 
   if (!isNaN(result)) {
+    [
+      ...document
+        .getElementById("fahrenheit-input")
+        .parentElement.getElementsByClassName("error"),
+    ].forEach(function (el) {
+      el.remove();
+    });
     document.getElementById("fahrenheit-input").value = result;
     document.getElementById("cara-kalkulasi").innerHTML =
       celciusInput + "<sup>o</sup>C * (9/5) + 32 = " + result + "<sup>o</sup>F";
@@ -22,6 +29,13 @@ function toFahrenheit() {
   var result = (parseInt(fahrenheitInput) - 32) / 1.8;
 
   if (!isNaN(result)) {
+    [
+      ...document
+        .getElementById("celcius-input")
+        .parentElement.getElementsByClassName("error"),
+    ].forEach(function (el) {
+      el.remove();
+    });
     document.getElementById("celcius-input").value = result;
     document.getElementById("cara-kalkulasi").innerHTML =
       fahrenheitInput +
@@ -41,10 +55,10 @@ function toReset() {
 }
 
 function ubahFormula() {
-  var celciusValue = document.getElementById("celcius-input").value
+  var celciusValue = document.getElementById("celcius-input").value;
   var celciusInput = !isNaN(celciusValue) ? celciusValue : "";
   var fahrenheitValue = document.getElementById("fahrenheit-input").value;
-  var fahrenheitInput = !isNaN(fahrenheitInput) ? fahrenheitInput : "";
+  var fahrenheitInput = !isNaN(fahrenheitValue) ? fahrenheitValue : "";
   var kalkulasi = document
     .getElementById("kalkulasi-btn")
     .getAttribute("data-kalkulasi");
